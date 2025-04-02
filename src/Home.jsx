@@ -1,4 +1,5 @@
 import React from 'react'
+import Apropos from "./Apropos";
 
 function Home() {
   
@@ -28,9 +29,7 @@ function Home() {
                 </ul>
             </div>
         </footer>
-        </>
-    </div>
-  )
+        
 }
 
 export default Home
