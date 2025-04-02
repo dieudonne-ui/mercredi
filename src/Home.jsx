@@ -1,7 +1,19 @@
 import React from 'react'
 
 function Home() {
-  
+  return (
+    <div>
+        <>
+        <header>
+            <div className="logo">LOGO</div>
+            <div className="navbar">
+                <ul>
+
+                </ul>
+                
+                <button className="btn">Connecter/S'inscrire</button>
+            </div>
+        </header>
         <footer>
             <div className="logo">LOGO</div>
             <div>
