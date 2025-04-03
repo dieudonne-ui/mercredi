@@ -1,29 +1,49 @@
-// Apropos.jsx
-import React, { useEffect, useState } from "react";
-import 
-const Apropos = () => {
-  const [data, setData] = useState(null);
+// About.js
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Footer from '../partiels/Footer';
+import Navebar from '../partiels/Navebar';
 
+const Apropos = () => {
+  const [apiData, setApiData] = useState(null);
+  const navigate = useNavigate();
+
+  // Faire un appel API
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos/1") // Exemple d'API
-      .then((response) => response.json())
-      .then((json) => setData(json))
-      .catch((error) => console.error("Erreur lors de la récupération des données:", error));
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://api.example.com/data'); // Remplacez par l'URL de votre API
+        const data = await response.json();
+        setApiData(data);
+      } catch (error) {
+        console.error('Erreur lors de l\'appel API:', error);
+      }
+    };
+    fetchData();
   }, []);
 
+  // Fonction pour rediriger vers une autre page
+  const handleRedirect = () => {
+    navigate('/contact'); // Remplacez "/contact" par la route où vous voulez rediriger
+  };
+
   return (
-    <div className="p-6 bg-gray-100 min-h-screen flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold mb-4">Bienvenue sur la page À Propos</h1>
-      <p className="text-lg">Cette page vous donne plus d'informations sur notre projet.</p>
-      {data ? (
-        <div className="mt-4 p-4 bg-white shadow rounded">
-          <h2 className="text-xl font-semibold">Données API:</h2>
-          <p>ID: {data.id}</p>
-          <p>Titre: {data.title}</p>
+    <div>
+      <h1>À propos de nous</h1>
+      <p>Voici quelques informations sur notre entreprise...</p>
+
+      {/* Afficher les données de l'API */}
+      {apiData ? (
+        <div>
+          <h2>Informations API:</h2>
+          <pre>{JSON.stringify(apiData, null, 2)}</pre>
         </div>
       ) : (
         <p>Chargement des données...</p>
       )}
+
+      {/* Bouton de redirection */}
+      <button onClick={handleRedirect}>Contactez-nous</button>
     </div>
   );
 };

@@ -1,5 +1,7 @@
 import React from 'react'
-import Apropos from "./Apropos";
+import Navebar from './partiels/Navebar'
+//import Footer from './partiels/Footer'
+//import Apropos from './components/apropos'
 
 function Home() {
   
