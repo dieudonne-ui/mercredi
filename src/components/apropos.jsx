@@ -1,8 +1,6 @@
 // About.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../partiels/Footer';
-import Navebar from '../partiels/Navebar';
 
 const Apropos = () => {
   const [apiData, setApiData] = useState(null);
