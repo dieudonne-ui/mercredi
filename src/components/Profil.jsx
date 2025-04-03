@@ -18,11 +18,11 @@ function Profil() {
   useEffect(() => {
     setTimeout(() => {
       const fakeUserData = {
-        nom: "GUIRGUISSOU",
-        prenom: "Ibrahim",
+        nom: "BACHABI",
+        prenom: "Askandarou",
         profession: "Développeur-Web Junior",
-        email: "ibrahimguirguissou@gmail.com",
-        password: "Absohkle1254@er/",
+        email: "askandaroubachabi@gmail.com",
+        password: "sohkale14@er/",
       };
       setUser(fakeUserData);
     }, 1000); // Simulation d'un délai de réponse API
